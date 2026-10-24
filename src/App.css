@@ -1,0 +1,834 @@
+/* ========================================
+   PARKEASE - MODERN & PREMIUM DESIGN
+   Theme: Navy Blue, Royal Blue & White
+======================================== */
+
+:root {
+  --primary: #1e3a8a;
+  --primary-hover: #1d4ed8;
+  --accent: #3b82f6;
+  --background: #f8fafc;
+  --white: #ffffff;
+  --heading: #0f172a;
+  --text: #64748b;
+  --light-blue: #eff6ff;
+  --border: #e2e8f0;
+  --success: #15803d;
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+/* ---------- GENERAL ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+.app {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--heading);
+  line-height: 1.25;
+}
+
+p {
+  color: var(--text);
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+  width: 100%;
+  min-height: 82px;
+  padding: 18px 7%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);
+}
+
+.logo {
+  color: var(--white);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #e2e8f0;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #93c5fd;
+}
+
+.nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--white);
+  border: 1px solid transparent;
+  padding: 12px 22px;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+  min-height: 520px;
+  padding: 75px 8%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 55px;
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(147, 197, 253, 0.22),
+      transparent 35%
+    ),
+    var(--white);
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-tag {
+  display: inline-block;
+  color: var(--primary-hover);
+  background: var(--light-blue);
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.hero h1 span {
+  color: var(--primary-hover);
+}
+
+.hero-description {
+  max-width: 530px;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  color: #475569;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary-hover);
+  color: var(--white);
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-button:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.24);
+}
+
+/* ---------- HERO PARKING CARD ---------- */
+
+.hero-card {
+  width: 100%;
+  max-width: 390px;
+  justify-self: center;
+  padding: 38px 28px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.hero-card::before {
+  display: none;
+}
+
+.parking-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: var(--light-blue);
+  color: var(--primary);
+  font-size: 38px;
+}
+
+.parking-details h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.parking-details p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.parking-details {
+  margin-bottom: 30px;
+}
+
+.hero-card > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  align-items: start;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.hero-card > div:last-child p {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 0%;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+/* ---------- ABOUT SECTION ---------- */
+
+.about {
+  padding: 85px 8%;
+  text-align: center;
+  background: var(--light-blue);
+}
+
+.about h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+/* ---------- PARKING SECTION ---------- */
+
+.parking-section {
+  padding: 85px 7%;
+  background: var(--background);
+}
+
+.parking-section h2 {
+  text-align: center;
+  font-size: clamp(28px, 3vw, 38px);
+  margin-bottom: 15px;
+}
+
+.parking-section > p {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  line-height: 1.8;
+}
+
+/* Search form */
+
+.search-box {
+  max-width: 720px;
+  margin: 0 auto 45px;
+  padding: 25px;
+  display: flex;
+  align-items: end;
+  gap: 15px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.search-box label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--heading);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--heading);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--accent);
+}
+
+.search-box button {
+  flex-shrink: 0;
+  padding: 13px 23px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-hover);
+  color: var(--white);
+  font-weight: 700;
+  transition: background 0.25s ease;
+}
+
+.search-box button:hover {
+  background: var(--primary);
+}
+
+/* ---------- PARKING RESULTS ---------- */
+
+.parking-results {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.parking-results h3 {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.spot-card {
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.spot-card:hover {
+  transform: translateY(-5px);
+  border-color: #bfdbfe;
+  box-shadow: var(--shadow);
+}
+
+.spot-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--light-blue);
+  color: var(--primary);
+  font-size: 28px;
+}
+
+.spot-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.spot-location {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.spot-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.spot-bottom p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.spot-bottom button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-hover);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.25s ease;
+}
+
+.spot-bottom button:hover {
+  background: var(--primary);
+}
+
+/* ---------- BOOKING SECTION ---------- */
+
+.booking-section {
+  padding: 80px 7%;
+  background: var(--light-blue);
+}
+
+.booking-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 35px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.booking-container h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.booking-container > p {
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--heading);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--heading);
+  outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: var(--accent);
+}
+
+.booking-total {
+  padding: 18px;
+  border-radius: 10px;
+  background: var(--light-blue);
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.confirm-button,
+.cancel-button {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 9px;
+  font-weight: 700;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.confirm-button {
+  border: 1px solid var(--primary-hover);
+  background: var(--primary-hover);
+  color: var(--white);
+}
+
+.confirm-button:hover {
+  background: var(--primary);
+}
+
+.cancel-button {
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--heading);
+}
+
+.cancel-button:hover {
+  background: #f1f5f9;
+}
+
+/* ---------- BOOKING CONFIRMATION ---------- */
+
+.confirmation {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 35px;
+  background: var(--white);
+  border: 1px solid #bbf7d0;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.confirmation-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: var(--success);
+  font-size: 34px;
+}
+
+.confirmation h2 {
+  margin-bottom: 15px;
+}
+
+.confirmation-details {
+  margin-top: 25px;
+  padding: 20px;
+  background: var(--background);
+  border-radius: 12px;
+  text-align: left;
+}
+
+.confirmation-details p {
+  padding: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+.demo-notice {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ---------- CONTACT SECTION ---------- */
+
+.contact {
+  padding: 75px 7%;
+  background: var(--white);
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  margin-bottom: 18px;
+}
+
+.contact p {
+  max-width: 650px;
+  margin: 0 auto 20px;
+  line-height: 1.8;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  padding: 28px 7%;
+  background: var(--primary);
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.footer p {
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablets and smaller laptops */
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 18px 5%;
+    gap: 18px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 65px 6%;
+    gap: 30px;
+  }
+
+  .parking-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablets and mobile phones */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-button {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 55px 6%;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(35px, 8vw, 48px);
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-card {
+    max-width: 420px;
+  }
+
+  .about,
+  .parking-section,
+  .booking-section,
+  .contact {
+    padding: 60px 6%;
+  }
+
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .parking-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .booking-container,
+  .confirmation {
+    padding: 25px 20px;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 380px) {
+  .navbar {
+    padding: 16px 4%;
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-button {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 45px 5%;
+  }
+
+  .hero h1 {
+    font-size: 33px;
+  }
+
+  .hero-tag {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .spot-card {
+    padding: 20px;
+  }
+
+  .spot-bottom {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .spot-bottom button {
+    width: 100%;
+  }
+
+  .booking-container,
+  .confirmation {
+    padding: 22px 16px;
+  }
+}
